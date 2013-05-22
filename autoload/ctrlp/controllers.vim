@@ -7,7 +7,7 @@ let s:controllers_var = {
 \  'init':   'ctrlp#controllers#init()',
 \  'accept': 'ctrlp#controllers#accept',
 \  'lname':  'controllers',
-\  'sname':  'controllers',
+\  'sname':  'contro',
 \  'type':   'path',
 \}
 
