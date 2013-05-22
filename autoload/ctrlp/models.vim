@@ -18,7 +18,7 @@ else
 endif
 
 function! ctrlp#models#init()
-  return split(system('ls app/models/'), "\n")
+  return split(system("find app/models -type f | sed 's_app/models/__'"), "\n")
 endfunc
 
 function! ctrlp#models#accept(mode, str)

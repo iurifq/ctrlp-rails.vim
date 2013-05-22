@@ -18,7 +18,7 @@ else
 endif
 
 function! ctrlp#views#init()
-  return split(system("find app/views/ -type f | sed 's_app/views/__'"), "\n")
+  return split(system("find app/views -type f | sed 's_app/views/__'"), "\n")
 endfunc
 
 function! ctrlp#views#accept(mode, str)

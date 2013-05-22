@@ -18,7 +18,7 @@ else
 endif
 
 function! ctrlp#controllers#init()
-  return split(system('ls app/controllers/'), "\n")
+  return split(system("find app/controllers -type f | sed 's_app/controllers/__'"), "\n")
 endfunc
 
 function! ctrlp#controllers#accept(mode, str)
