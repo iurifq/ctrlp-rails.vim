@@ -18,11 +18,11 @@ else
 endif
 
 function! ctrlp#models#init()
-  return split(system("find app/models -type f | sed 's_app/models/__'"), "\n")
+  return map(globpath('app/models/**', '*.rb', 0, 1), 'fnamemodify(v:val, ":s?app/models/??:s?.rb??")')
 endfunc
 
 function! ctrlp#models#accept(mode, str)
-  call ctrlp#acceptfile(a:mode, 'app/models/' . a:str)
+  call ctrlp#acceptfile(a:mode, 'app/models/' . a:str . '.rb')
 endfunc
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)

@@ -18,11 +18,11 @@ else
 endif
 
 function! ctrlp#controllers#init()
-  return split(system("find app/controllers -type f | sed 's_app/controllers/__'"), "\n")
+  return map(globpath('app/controllers/**', '*_controller.rb', 0, 1), 'fnamemodify(v:val, ":s?app/controllers/??:s?_controller.rb??")')
 endfunc
 
 function! ctrlp#controllers#accept(mode, str)
-  call ctrlp#acceptfile(a:mode, 'app/controllers/' . a:str)
+  call ctrlp#acceptfile(a:mode, 'app/controllers/' . a:str . '_controller.rb')
 endfunc
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)

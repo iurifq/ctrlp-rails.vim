@@ -18,7 +18,7 @@ else
 endif
 
 function! ctrlp#libs#init()
-  return split(system("find lib -type f | sed 's_lib/__'"), "\n")
+  return map(globpath('lib/**', '*.*', 0, 1), 'fnamemodify(v:val, ":s?lib/??")')
 endfunc
 
 function! ctrlp#libs#accept(mode, str)
