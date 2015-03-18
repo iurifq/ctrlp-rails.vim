@@ -18,7 +18,7 @@ else
 endif
 
 function! ctrlp#specs#init()
-  return split(system("find spec -type f -iname \"*rb\" | sed 's_lib/__'"), "\n")
+  return map(globpath('spec/**', '*.rb', 0, 1), 'fnamemodify(v:val, ":s?lib/??")')
 endfunc
 
 function! ctrlp#specs#accept(mode, str)
