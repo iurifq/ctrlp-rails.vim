@@ -7,7 +7,7 @@ let s:libs_var = {
 \  'init':   'ctrlp#libs#init()',
 \  'accept': 'ctrlp#libs#accept',
 \  'lname':  'libs',
-\  'sname':  'contro',
+\  'sname':  'libs',
 \  'type':   'path',
 \}
 
