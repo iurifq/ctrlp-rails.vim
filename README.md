@@ -5,6 +5,9 @@ This is a ctrlp.vim extension that allows you to open your Rails app files easil
 * `:CtrlPModels`
 * `:CtrlPControllers`
 * `:CtrlPViews`
+* `:CtrlPLibs`
+* `:CtrlPSpecs`
+* `:CtrlPMigrations`
 
 ## Installation
 
@@ -19,4 +22,10 @@ Bundle 'iurifq/ctrlp-rails.vim'
 
 ``` vim
 NeoBundle 'iurifq/ctrlp-rails.vim', {'depends' : 'kien/ctrlp.vim' }
+```
+
+### Vim-plug
+
+``` vim
+Plug 'iurifq/ctrlp-rails.vim' | Plug 'kien/ctrlp.vim'
 ```
